@@ -1,0 +1,7 @@
+
+arm-none-eabi-gcc -O2 -mfpu=vfp -mfloat-abi=hard -march=armv6zk -mtune=arm1176jzf-s -nostartfiles kernel.c -o kernel.elf
+
+rem the above line gives us warning.  s'ok.
+
+rem turn the kernel into kernel.img
+arm-none-eabi-objcopy kernel.elf -O binary kernel.img
